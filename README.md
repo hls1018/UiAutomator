@@ -36,3 +36,75 @@
 
 （10），adb shell uiautomator runtest <jar文件名> -c <包名.类名>
 
+三、代码详解：
+
+exec()这个函数的意思，相当于你在输入adb shell 命令后，在Android手机系统的命令行下运行。所以上面这句话的意思和我们打开cmd框输入" adb shell am start *** " 是一样的的效果。
+
+UiDevice：UiDevice用与访问关设备状态的信息，也可以使用这个类来模拟用户在设备上的操作。
+        
+
+UiDevice：UiDevice用与访问关设备状态的信息，也可以使用这个类来模拟用户在设备上的操作。
+        
+        实例操作方法：
+        
+        UiDevice mdevice = getUiDevice();
+        
+        函数体：
+        
+        click(int x, int y)：模拟用户在指定位置点击。
+        
+        getCurrentActivityName()：获得的是应用程序在桌面上显示的名字。
+        
+        getCurrentPackageName()：获得当前显示的应用程序的包名。
+        
+        getDisplayHeight()：获得当前设备的屏幕分辨率的高。
+        
+        getDisplayWighth()：获得当前设备的屏幕分辨率的宽。
+        
+         isScreenOn()：判断手机当前是否灭屏。
+         
+         wakeUp()：点亮当前屏幕。
+         
+         pressBack()：点击back键。
+         
+         pressHome()：点击home键。
+         
+         pressMenu()：点击menu键。
+         
+         pressKeyCode(int keyCode)：利用keycode值模拟一次按下事件
+         
+         swipe(int startX, int startY, int endX, int endY, int steps)：用指定的步长，从A点滑动B点。
+         
+         takeScreenshot(File storePath)： 截取当前屏幕，保存到文件。
+         
+UiSelector：按照一定的条件（例如控件的text值，资源id），定位界面上的元素。UiSelector对象的最终目的是去构造一个UiObject对象。。
+        
+        函数体：
+        
+        text(String text)：根据“控件text属性的内容”构造出UiSelector对象。
+        
+        textContains(String text)：根据“控件text属性包含的内容”构造出UiSelector对象。
+        
+        textMatches(String regex) ：根据“控件text属性正则表达式的内容”构造出UiSelector对象。
+        
+        textStartsWith(String text)：根据“控件text属性开始的内容”构造出UiSelector对象。
+        
+        description(String desc)：根据“控件content-desc属性的内容”构造出UiSelector对象。
+        
+        descriptionContains(String desc)：包含**
+        
+        descriptionMatches(String regex)：正则
+        
+        descriptionStartsWith(String desc)：以**开始
+        
+        resourceId(String id)：根据资源id获取对象，例如：UiSelector s = new UiSelector().resourceId("com.tencent.mm:id/b8m")。
+        
+        resourceIdMatches(String regex)：根据资源id的正则表达式获取对象。
+        
+        UiSelector className(String  className)：根据控件的类名来找到UiSelector对象。
+        
+UiCollection: http://android.toolib.net/tools/help/uiautomator/UiCollection.html
+
+UiScrollable:http://android.toolib.net/tools/help/uiautomator/UiScrollable.html
+
+UiObject:
